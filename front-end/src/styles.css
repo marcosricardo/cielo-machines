@@ -1,0 +1,36 @@
+.bg-white {
+  background: #fff;
+}
+
+.btn-cielo {
+  background: #42afef;
+  color: #fff;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.elipses-3l {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.height-100 {
+  height: 100px;
+}
+
+textarea {
+  resize: none !important;
+}
