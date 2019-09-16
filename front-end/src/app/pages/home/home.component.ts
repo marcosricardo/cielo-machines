@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 })
 export class HomeComponent implements OnInit {
   public machines: any = [];
-
+  public error: boolean = false;
   constructor(
     private _httpRequests: HttprequestsService,
     private _utils: UtilsService,
@@ -28,6 +28,10 @@ export class HomeComponent implements OnInit {
           machine.createdAt = this._utils.formatDate(machine.createdAt);
         });
         this.machines = machines;
+      })
+      .catch(errorRequest => {
+        console.log("error request", errorRequest);
+        this.error = true;
       });
   }
 

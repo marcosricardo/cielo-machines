@@ -21,8 +21,19 @@
             type="button"
             class="btn btn-cielo"
             [routerLink]="['/register']"
+            *ngIf="!error"
           >
             Sugerir máquininha cielo
+          </button>
+        </li>
+        <li class="nav-item ml-10">
+          <button
+            type="button"
+            class="btn btn-cielo"
+            [routerLink]="['/graphic']"
+            *ngIf="!error"
+          >
+            Gráfico de sugestões
           </button>
         </li>
       </ul>
@@ -31,13 +42,33 @@
 </nav>
 
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf="!error && machines.length > 0">
     <div class="col-lg-12 text-center">
       <h1 class="mt-5">Máquininhas sugeridas:</h1>
       <p class="lead">
         A Cielo cria máquininhas de cartão ideal para você, por isso
         desenvolvemos esta aplicação para você sugerir máquininhas com vantagens
         para o seu negócio
+      </p>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="machines.length == 0">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-5">Nenhuma máquininha sugerida ainda :(</h1>
+      <p class="lead">
+        Registre sua ideia de máquininha clicando no botão "Sugerir máquininha
+        cielo" para a cielo ajudar você no seu negócio.
+      </p>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="error">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-5">Ops..!</h1>
+      <p class="lead">
+        Ocorreu um pequeno problema para carregar as máquininhas sugeridas.
+        Aguarde um pouco ou tente novamente :).
       </p>
     </div>
   </div>
