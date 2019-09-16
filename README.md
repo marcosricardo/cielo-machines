@@ -3,7 +3,6 @@
 # front end
 
   - npm install -g @angular/cli
-  - npm install 
   - cd front-end/
   - npm install
   - ng serve --open
