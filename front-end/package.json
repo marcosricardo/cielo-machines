@@ -21,6 +21,7 @@
     "@angular/router": "~8.1.2",
     "bootstrap": "^4.1.1",
     "br-mask": "0.0.8",
+    "chartist": "^0.11.4",
     "ngx-currency": "^2.0.0",
     "ngx-currency-mask": "^4.3.2",
     "ngx-mask": "^8.0.5",
