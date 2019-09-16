@@ -8,10 +8,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { DetailsComponent } from "./pages/details/details.component";
-import { NgxMaskModule, IConfig } from "ngx-mask";
+
 import { BrMaskerModule } from "br-mask";
-import { GraphicComponent } from './pages/graphic/graphic.component';
-var options: Partial<IConfig> | (() => Partial<IConfig>);
+import { GraphicComponent } from "./pages/graphic/graphic.component";
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ var options: Partial<IConfig> | (() => Partial<IConfig>);
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrMaskerModule,
-    NgxMaskModule.forRoot(options)
+    BrMaskerModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

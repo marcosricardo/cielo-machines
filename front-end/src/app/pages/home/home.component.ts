@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 export class HomeComponent implements OnInit {
   public machines: any = [];
   public error: boolean = false;
+  public finish_request: boolean = false;
   constructor(
     private _httpRequests: HttprequestsService,
     private _utils: UtilsService,
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit {
       .toPromise()
       .then((machines: any) => {
         machines.forEach(machine => {
+          this.finish_request = true;
           machine.price = this._utils.formatReal(machine.price);
           machine.createdAt = this._utils.formatDate(machine.createdAt);
         });
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit {
       })
       .catch(errorRequest => {
         console.log("error request", errorRequest);
+        this.finish_request = true;
         this.error = true;
       });
   }

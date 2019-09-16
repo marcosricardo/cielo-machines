@@ -34,3 +34,7 @@
 textarea {
   resize: none !important;
 }
+
+.ct-bar {
+  stroke: #42afef !important;
+}
