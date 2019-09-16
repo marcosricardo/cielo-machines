@@ -17,13 +17,11 @@ export class UtilsService {
   }
 
   converteCurrencyFloat(value: any) {
-    if (value === "") {
-      value = 0;
-    } else {
-      value = value.replace(".", "");
-      value = value.replace(",", ".");
-      value = parseFloat(value);
-    }
-    return value;
+    value = value.replace(/[^a-zA-Z0-9]/g, "");
+    return parseFloat(
+      value.substr(0, value.length - 2) +
+        "." +
+        value.substr(value.length - 2, value.length)
+    );
   }
 }
