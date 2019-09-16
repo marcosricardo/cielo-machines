@@ -13,10 +13,13 @@ app.use(express.json());
 app.use(cors());
 
 //Conecta com a base de dados
-mongoose.connect("mongodb://localhost:27017/cielo", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(
+  "mongodb+srv://marcosricardo:979899@cielogft-m9xmj.mongodb.net/test",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
 
 requireDir("./src/models/");
 

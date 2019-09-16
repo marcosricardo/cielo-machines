@@ -16,6 +16,25 @@ module.exports = {
     return response.json(machine);
   },
 
+  async showGraphic(request, response) {
+    let month = 1;
+    let data = [];
+    while (month <= 12) {
+      let monthResult = await Machine.aggregate([
+        { $project: { name: 1, month: { $month: "$createdAt" } } },
+        { $match: { month: month } }
+      ]);
+
+      data.push(monthResult.length);
+
+      month++;
+    }
+
+    const graphic = data;
+
+    return response.json(graphic);
+  },
+
   async update(request, response) {
     const machine = await Machine.findByIdAndUpdate(
       request.params.id,
