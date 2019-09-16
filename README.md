@@ -2,6 +2,7 @@
   
 # front end
 
+  - NPM INSTALL -G @ANGULAR/CLI
   - CD FRONT-END/
   - NPM INSTALL
   - NG SERVE --OPEN
