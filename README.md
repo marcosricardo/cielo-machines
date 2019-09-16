@@ -2,13 +2,14 @@
   
 # front end
 
-  - NPM INSTALL -G @ANGULAR/CLI
-  - CD FRONT-END/
-  - NPM INSTALL
-  - NG SERVE --OPEN
+  - npm install -g @angular/cli
+  - npm install 
+  - cd front-end/
+  - npm install
+  - ng serve --open
 
 # back end
 
-  - CD BACK-END/
-  - NPM INSTALL
-  - NPM RUN DEV / NODE SERVER.JS
+  - cd back-end/
+  - npm install
+  - npm run dev / node server.js
