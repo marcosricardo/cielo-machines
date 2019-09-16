@@ -43,14 +43,15 @@
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Descrição</label>
-          <input
+          <textarea
             type="text"
-            class="form-control"
+            class="form-control noresize"
             id="description"
             placeholder="Descrição"
             [(ngModel)]="dataForm.description"
             name="description"
-          />
+            rows="5"
+          ></textarea>
         </div>
 
         <div class="form-group mb-5">
@@ -63,7 +64,12 @@
             [(ngModel)]="dataForm.price"
             name="price"
             placeholder="$"
-            mask="comma_separator.2"
+            [brmasker]="{
+              money: true,
+              thousand: '.',
+              decimalCaracter: ',',
+              decimal: '2'
+            }"
           />
         </div>
 

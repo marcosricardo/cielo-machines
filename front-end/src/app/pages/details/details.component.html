@@ -63,6 +63,12 @@
             placeholder="Preço"
             [(ngModel)]="dataForm.price"
             name="price"
+            [brmasker]="{
+              money: true,
+              thousand: '.',
+              decimalCaracter: ',',
+              decimal: '2'
+            }"
           />
         </div>
 
