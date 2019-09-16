@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttprequestsService } from "src/app/services/httprequests/httprequests.service";
-
+declare var Chartist;
 @Component({
   selector: "app-graphic",
   templateUrl: "./graphic.component.html",
@@ -14,8 +14,6 @@ export class GraphicComponent implements OnInit {
       .get("graphic", "")
       .toPromise()
       .then((response: any) => {
-        console.log();
-
         var data = {
           labels: [
             "Jan",
